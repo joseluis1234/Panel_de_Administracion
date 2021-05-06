@@ -10,6 +10,7 @@ html {
 body {
   font-family: $fuente_principal;
   height: 100%;
+  background-color: $gris;
 }
 img {
   max-width: 100%;
@@ -79,6 +80,10 @@ img {
     }
     .fa-arrow-right{
       display: none;
+      cursor: pointer;
+    }
+    .fa-arrow-left{
+      cursor: pointer;
     }
   }
 
@@ -185,4 +190,57 @@ img {
 .contenedor-principal {
   flex: 1;
   display: flex;
+}
+
+.contenido{
+  flex: 1;
+  padding: 2rem;
+}
+
+.formulario{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .campo{
+    flex: 0 0 100%;
+    @include tablet{
+      flex: 0 0 calc(50% - 1rem);
+    }
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: center;
+
+    &.expandir{
+      flex: 0 0 calc(100% - 1rem);
+      align-items: flex-start;
+      label{
+        flex: 0 0 12.5%;
+      }
+      textarea{
+        flex: 1;
+        
+      }
+    }
+    label{
+      flex: 0 0 25%;
+    }
+    input[type="text"]{
+      flex: 0 0 75%;
+      height: 2rem;
+    }
+    .opciones{
+      display: flex;
+      flex: 1;
+      label{
+        padding-left: 1rem;
+      }
+    }
+    &.enviar{
+      display: flex;
+      justify-content: flex-end;
+      .boton{
+        @include boton($primario)
+      }
+    }
+  }
 }
